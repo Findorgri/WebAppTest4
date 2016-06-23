@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>WΑΤ</title>
+
+</head>
+<body>
+<div class="container">
+
+    <div th:if="${not #lists.isEmpty(experiences)}">
+        <h2>Experiences</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="experience : ${experiences}">
+                <td th:text="${experience.id}"><a href="/experience/${experience.id}">Id</a></td>
+                <td th:text="${experience.username}">Name</td>
+                <td th:text="${experience.description}">Descirption</td>
+                <td><a th:href="${'/experience/' + experience.id}">View</a></td>
+                <td><a th:href="${'/experience/edit/' + experience.id}">Edit</a></td>
+                <td><a th:href="${'/experience/delete/' + experience.id}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>
