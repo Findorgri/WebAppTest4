@@ -18,14 +18,14 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Name:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{username}"/>
+                    <input type="text" class="form-control" style="width:600px;" th:field="*{username}"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-2 control-label">Description:</label>
                 <div class="col-sm-10">
-                    <input type="textarea" class="form-control" style="height:250px; width:600px;" th:field="*{description}"/>
+                    <textarea class="form-control" style="height:250px; width:600px;" th:field="*{description}"></textarea>
                     <div class="alert alert-danger" th:if="${#fields.hasErrors('description')}">
                         <span class="help-inline" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"> Incorrect value </span>
                     </div>
